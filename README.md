@@ -1,6 +1,6 @@
 # Compiler Design RAG
 
-I chose this topic because I'm writing a small optimizing C compiler for my thesis (/ccompiler). I added some documents that I am already using so that it will have some actual utility besides just being an assignment.
+I chose this topic because I'm writing a small optimizing C compiler for my thesis (AFKrejza/ccompiler). I added some documents that I am already using so that it will have some actual utility besides just being an assignment.
 
 Example questions:
 - "What is an abstract syntax tree?"
@@ -24,9 +24,9 @@ You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and an [A
 #   Windows:     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 #   macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh
 
-Then restart the terminal. It should then enable the venv automatically.
+# Then restart the terminal so the uv command is found.
 # 2. Clone and install dependencies
-git clone <this repo> && cd rag
+git clone https://github.com/AFKrejza/rag.git && cd rag
 uv sync
 
 # 3. Add your API key
