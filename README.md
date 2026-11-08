@@ -1,5 +1,16 @@
 # Compiler Design RAG
 
+I chose this topic because I'm writing a small optimizing C compiler for my thesis (/ccompiler). I added some documents that I am already using so that it will have some actual utility besides just being an assignment.
+
+Example questions:
+- "What is an abstract syntax tree?"
+- "Why build a compiler incrementally?"
+- "What is a symbol table?"
+- "How are function calls and stack frames handled?"
+- "Do variables exist in assembly?"
+
+____________
+
 Ask practical compiler-construction questions ("how do I start writing a register allocator?") and get answers grounded in a small library of compiler papers. Every claim is cited as `[filename, p. N]`.
 
 **Pipeline:** PDF → text (`pypdf`) → per-page chunks with overlap → embeddings (`sentence-transformers/all-MiniLM-L6-v2`) → Chroma vector DB → top-k semantic search → Claude answers from the retrieved chunks only.
@@ -13,6 +24,7 @@ You need [uv](https://docs.astral.sh/uv/getting-started/installation/) and an [A
 #   Windows:     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 #   macOS/Linux: curl -LsSf https://astral.sh/uv/install.sh | sh
 
+Then restart the terminal. It should then enable the venv automatically.
 # 2. Clone and install dependencies
 git clone <this repo> && cd rag
 uv sync
