@@ -1,0 +1,30 @@
+[project]
+name = "compiler-rag"
+version = "0.1.0"
+description = "RAG over compiler-design PDFs with page-level citations"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "anthropic>=0.80",
+    "chromadb>=1.0",
+    "sentence-transformers>=3.0",
+    "torch>=2.4",
+    "pypdf>=5.0",
+    "python-dotenv>=1.0",
+    "streamlit>=1.40",
+]
+
+# Use the CPU-only torch build on Linux to avoid a ~2 GB CUDA download.
+# (PyPI's Windows and macOS torch wheels are already CPU-only.)
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv]
+package = false
+# Always use a uv-managed CPython so system/MSYS2/Conda interpreters can't break wheel installs.
+python-preference = "only-managed"
